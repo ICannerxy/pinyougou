@@ -1,6 +1,7 @@
 package com.pinyougou.manager.controller;
 import java.util.List;
 
+import com.pinyougou.pojo.TbItemCat;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,8 +31,7 @@ public class ItemController {
 	public List<TbItem> findAll(){			
 		return itemService.findAll();
 	}
-	
-	
+
 	/**
 	 * 返回全部列表
 	 * @return

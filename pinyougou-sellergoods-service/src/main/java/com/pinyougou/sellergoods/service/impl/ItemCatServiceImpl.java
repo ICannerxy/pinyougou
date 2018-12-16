@@ -31,6 +31,21 @@ public class ItemCatServiceImpl implements ItemCatService {
 		return itemCatMapper.selectByExample(null);
 	}
 
+
+	/**
+	 * 根据上级ID查询商品分类
+	 *
+	 * @param parentId
+	 * @return
+	 */
+	@Override
+	public List<TbItemCat> findByParentId(Long parentId) {
+		TbItemCatExample example = new TbItemCatExample();
+        Criteria criteria = example.createCriteria();
+        criteria.andParentIdEqualTo(parentId);
+        return itemCatMapper.selectByExample(example);
+	}
+
 	/**
 	 * 按分页查询
 	 */

@@ -30,8 +30,18 @@ public class ItemCatController {
 	public List<TbItemCat> findAll(){			
 		return itemCatService.findAll();
 	}
-	
-	
+
+
+	/**
+	 * 根据上级ID查询商品分类列表
+	 * @param parentId
+	 * @return
+	 */
+	@RequestMapping("/findByParentId")
+	public List<TbItemCat> findByParentId(Long parentId) {
+		return itemCatService.findByParentId(parentId);
+	}
+
 	/**
 	 * 返回全部列表
 	 * @return
@@ -101,7 +111,6 @@ public class ItemCatController {
 	
 		/**
 	 * 查询+分页
-	 * @param brand
 	 * @param page
 	 * @param rows
 	 * @return
