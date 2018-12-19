@@ -17,6 +17,12 @@ public interface TypeTemplateService {
 	 * @return
 	 */
 	public List<TbTypeTemplate> findAll();
+
+	/**
+	 * 返回规格列表
+	 * @return
+	 */
+	public List<Map> findSpecList(Long id);
 	
 	
 	/**
