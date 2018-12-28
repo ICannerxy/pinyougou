@@ -8,16 +8,21 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo_fastDFS" />
         <module name="pinyougou-common" />
+        <module name="pinyougou-content-interface" />
+        <module name="pinyougou-content-service" />
         <module name="pinyougou-dao" />
         <module name="pinyougou-manager-web" />
         <module name="pinyougou-pojo" />
+        <module name="pinyougou-portal-web" />
         <module name="pinyougou-sellergoods-interface" />
         <module name="pinyougou-sellergoods-service" />
         <module name="pinyougou-shop-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="pinyougou-content" target="1.7" />
       <module name="pinyougousellergoods-interface" target="1.7" />
+      <module name="SpringDataRedisDemo" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
