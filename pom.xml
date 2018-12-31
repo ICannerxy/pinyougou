@@ -19,6 +19,10 @@
         <module>pinyougou-content-interface</module>
         <module>pinyougou-content-service</module>
         <module>pinyougou-portal-web</module>
+        <module>demo_springDataSolr</module>
+        <module>pinyougou-search-interface</module>
+        <module>pinyougou-search-service</module>
+        <module>pinyougou-search-web</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -26,7 +30,7 @@
     <!-- 集中定义依赖版本号 -->
     <properties>
         <junit.version>4.12</junit.version>
-        <spring.version>4.2.4.RELEASE</spring.version>
+        <spring.version>4.2.5.RELEASE</spring.version>
         <pagehelper.version>4.0.0</pagehelper.version>
         <servlet-api.version>2.5</servlet-api.version>
         <dubbo.version>2.8.4</dubbo.version>
