@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.pinyougou.pojo.TbGoods;
 
+import com.pinyougou.pojo.TbItem;
 import com.pinyougou.pojogroup.Goods;
 import entity.PageResult;
 
@@ -20,6 +21,13 @@ public interface GoodsService {
      * @return
      */
     public List<TbGoods> findAll();
+
+    /**
+     * 根据商品ID和状态查询Item表信息
+     * @param status
+     * @return
+     */
+    public List<TbItem> findItemListByGoodsIdListAndStatus(Long[] goodsIds, String status );
 
 
     /**
