@@ -2,7 +2,9 @@ package com.pinyougou.manager.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import com.pinyougou.page.service.ItemPageService;
 import com.pinyougou.pojogroup.Goods;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -132,13 +134,29 @@ public class GoodsController {
 				List<TbItem> itemList = goodsService.findItemListByGoodsIdListAndStatus(ids, status);
 				//导入到solr
 				itemSearchService.importList(itemList);				
-			}		
+				// 生成商品详情页
+				for (Long id : ids) {
+					itemPageService.genItemHtml(id);
+				}
+
+			}
 			
 			return new Result(true, "修改状态成功"); 
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new Result(false, "修改状态失败");
 		}
+	}
+
+	@Reference
+	private ItemPageService itemPageService;
+	/**
+	 * 生成静态页（测试）
+	 * @param goodsId
+	 */
+	@RequestMapping("/genHtml")
+		public void genHtml(Long goodsId){
+		itemPageService.genItemHtml(goodsId);
 	}
 	
 }
